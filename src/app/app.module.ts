@@ -13,7 +13,6 @@ import { RolunkComponent } from './rolunk/rolunk.component';
 import { ReferenciakComponent } from './referenciak/referenciak.component';
 import { FogalomtarComponent } from './fogalomtar/fogalomtar.component';
 import { GyikComponent } from './gyik/gyik.component';
-import { TervezesComponent } from './tervezes/tervezes.component';
 import { EszkozokComponent } from './eszkozok/eszkozok.component';
 import { PartnerekComponent } from './partnerek/partnerek.component';
 import { KapcsolatComponent } from './kapcsolat/kapcsolat.component';
@@ -38,7 +37,6 @@ export const routerSettings: Routes = [
     ReferenciakComponent,
     FogalomtarComponent,
     GyikComponent,
-    TervezesComponent,
     EszkozokComponent,
     PartnerekComponent,
     KapcsolatComponent
