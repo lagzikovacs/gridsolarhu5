@@ -10,12 +10,14 @@ import { FooldalComponent } from './fooldal/fooldal.component';
 import { AjanlatkeresComponent } from './ajanlatkeres/ajanlatkeres.component';
 import { ReferenciakComponent } from './referenciak/referenciak.component';
 import { KapcsolatComponent } from './kapcsolat/kapcsolat.component';
+import { PalyazatComponent } from './palyazat/palyazat.component';
 
 export const routerSettings: Routes = [
   { path: 'fooldal', component: FooldalComponent },
   { path: 'ajanlatkeres', component: AjanlatkeresComponent },
   { path: 'referenciak', component: ReferenciakComponent },
   { path: 'kapcsolat', component: KapcsolatComponent },
+  { path: 'palyazat', component: PalyazatComponent },
   { path: '', component: FooldalComponent },
   { path: '**', component: FooldalComponent }
 ];
@@ -27,7 +29,8 @@ export const routerSettings: Routes = [
     FooldalComponent,
     AjanlatkeresComponent,
     ReferenciakComponent,
-    KapcsolatComponent
+    KapcsolatComponent,
+    PalyazatComponent
   ],
   imports: [
     BrowserModule,

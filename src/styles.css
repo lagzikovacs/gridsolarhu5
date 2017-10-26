@@ -27,6 +27,13 @@
     transform:translate(-50%,-50%);text-align:center;
 }
 
+.vkozepre {
+  position: absolute;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, 0);
+}
+
 /* Beviteli mezőknél segítő/hiba szöveg */
 .help-block {
     display: inline;
@@ -35,10 +42,10 @@
 }
 
 #hatterkep {
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-  
+    position: fixed;
+    top: 0;
+    left: 0;
+
     /* Preserve aspet ratio */
     min-width: 100%;
     min-height: 100%;
