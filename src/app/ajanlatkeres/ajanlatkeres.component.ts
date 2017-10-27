@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Http, Headers, RequestOptions} from '@angular/http';
-import { Feliratkozas} from './feliratkozas';
+import {Component, OnInit} from '@angular/core';
+import {NgForm} from '@angular/forms';
+import {Http, Headers, RequestOptions} from '@angular/http';
+import {Feliratkozas} from './feliratkozas';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -14,8 +14,8 @@ import 'rxjs/add/operator/toPromise';
 export class AjanlatkeresComponent implements OnInit {
   public ajanlatkeresKesz = false;
 
-/*   private Fi = new Feliratkozas("Lagzi-Kovács Sándor", "5100 Jászberény, Túzok u. 42.",
-    "lks@gridsolar.hu", "0620 2575642", 0, 0); */
+  /*   private Fi = new Feliratkozas("Lagzi-Kovács Sándor", "5100 Jászberény, Túzok u. 42.",
+      "lks@gridsolar.hu", "0620 2575642", 0, 0); */
   public Fi = new Feliratkozas('', '', '', '', 0, 0);
 
   public hiba = false;
@@ -44,7 +44,7 @@ export class AjanlatkeresComponent implements OnInit {
     const url = 'http://docport.hu/ossspa/api/feliratkozas/ajanlatkeresasync';
     // let url = 'http://localhost:5000/api/feliratkozas/ajanlatkeresasync';
     const headers = new Headers({'Content-Type': 'application/json'});
-    const options = new RequestOptions({ headers: headers });
+    const options = new RequestOptions({headers: headers});
 
     this.http.post(url, this.Fi, options)
       .toPromise()

@@ -1,31 +1,31 @@
 .gombdoboz a {
-    margin:10px;
-    display:inline-block;
+  margin: 10px;
+  display: inline-block;
 }
 
 .gomb {
-    padding:10px;
-    width:150px;
-    background:rgba(0,0,0,0.5);
-    font-family:Arial;
-    font-size:16px;
-    text-align:center;
-    display:inline-block;
+  padding: 10px;
+  width: 150px;
+  background: rgba(0, 0, 0, 0.5);
+  font-family: Arial;
+  font-size: 16px;
+  text-align: center;
+  display: inline-block;
 }
 
 .gomb:hover {
-    filter:invert(100%);
-    transition-duration:0.5s;
+  filter: invert(100%);
+  transition-duration: 0.5s;
 }
 
 .cim {
-    font-size:35px;
-    color: white;
+  font-size: 35px;
+  color: white;
 }
 
 a {
-    color:white;
-    text-decoration:none;
+  color: white;
+  text-decoration: none;
 }
 
 .lablec {
