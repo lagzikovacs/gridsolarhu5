@@ -35,6 +35,13 @@
   transform: translate(-50%, 0);
 }
 
+.vjobbra {
+  position: absolute;
+  left: 100%;
+  margin-right: -100%;
+  transform: translate(-100%, 0);
+}
+
 /* Beviteli mezőknél segítő/hiba szöveg */
 .help-block {
   display: inline;
