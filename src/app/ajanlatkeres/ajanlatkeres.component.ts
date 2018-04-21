@@ -41,7 +41,7 @@ export class AjanlatkeresComponent implements OnInit {
 
     this.markattintott = true;
 
-    const url = 'http://docport.hu/ossspa/api/feliratkozas/ajanlatkeresasync';
+    const url = 'https://docport.hu/ossspa/api/feliratkozas/ajanlatkeresasync';
     // let url = 'http://localhost:5000/api/feliratkozas/ajanlatkeresasync';
     const headers = new Headers({'Content-Type': 'application/json'});
     const options = new RequestOptions({headers: headers});
