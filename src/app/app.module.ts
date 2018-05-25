@@ -11,6 +11,8 @@ import { AjanlatkeresComponent } from './ajanlatkeres/ajanlatkeres.component';
 import { ReferenciakComponent } from './referenciak/referenciak.component';
 import { KapcsolatComponent } from './kapcsolat/kapcsolat.component';
 import { PalyazatComponent } from './palyazat/palyazat.component';
+import { AszfComponent } from './aszf/aszf.component';
+import { GdprComponent } from './gdpr/gdpr.component';
 
 export const routerSettings: Routes = [
   { path: 'fooldal', component: FooldalComponent },
@@ -18,6 +20,8 @@ export const routerSettings: Routes = [
   { path: 'referenciak', component: ReferenciakComponent },
   { path: 'kapcsolat', component: KapcsolatComponent },
   { path: 'palyazat', component: PalyazatComponent },
+  { path: 'aszf', component: AszfComponent },
+  { path: 'gdpr', component: GdprComponent },
   { path: '', component: FooldalComponent },
   { path: '**', component: FooldalComponent }
 ];
@@ -30,7 +34,9 @@ export const routerSettings: Routes = [
     AjanlatkeresComponent,
     ReferenciakComponent,
     KapcsolatComponent,
-    PalyazatComponent
+    PalyazatComponent,
+    AszfComponent,
+    GdprComponent
   ],
   imports: [
     BrowserModule,
