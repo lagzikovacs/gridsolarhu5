@@ -14,9 +14,7 @@ import 'rxjs/add/operator/toPromise';
 export class AjanlatkeresComponent implements OnInit {
   public ajanlatkeresKesz = false;
 
-  /*   private Fi = new Feliratkozas("Lagzi-Kovács Sándor", "5100 Jászberény, Túzok u. 42.",
-      "lks@gridsolar.hu", "0620 2575642", 0, 0); */
-  public Fi = new Feliratkozas('', '', '', '', 0, 0);
+  public Fi = new Feliratkozas();
 
   public hiba = false;
   public hibaUzenet = '';
@@ -32,17 +30,11 @@ export class AjanlatkeresComponent implements OnInit {
     if (!form.valid) {
       return;
     }
-    if ((this.Fi.kompenzalando === 0 && this.Fi.nevleges === 0) ||
-      (this.Fi.kompenzalando > 0 && this.Fi.nevleges > 0)) {
-      this.hibaUzenet = 'Kérjük, hogy vagy a \'Kompenzálandó fogyasztás, kWh\' vagy a \'A napelemek teljesítménye, kW\' értékét adja meg!';
-      this.hiba = true;
-      return;
-    }
 
     this.markattintott = true;
 
-    const url = 'https://docport.hu/ossrest/api/feliratkozas/ajanlatkeres';
-    // let url = 'http://localhost:5000/api/feliratkozas/ajanlatkeresasync';
+    const url = 'https://docport.hu/ossrest/api/ugynok/webesajanlatkeres';
+    // let url = 'http://localhost:5000/api/ugynok/webesajanlatkeres';
     const headers = new Headers({'Content-Type': 'application/json'});
     const options = new RequestOptions({headers: headers});
 

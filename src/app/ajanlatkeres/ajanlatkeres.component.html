@@ -6,6 +6,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-md-4">
       <form #f="ngForm" (ngSubmit)="submitForm(f)" novalidate>
+
         <div class="form-group">
           <label for="nev">Név</label>
           <input type="text" class="form-control" name = "nev" [(ngModel)]="Fi.nev"
@@ -13,6 +14,7 @@
             minlength="5" maxlength="100" required>
           <span class="help-block" *ngIf="chkInput(f, f.controls.nev)">Kérjük adja meg a nevét!</span>
         </div>
+
         <div class="form-group">
           <label for="cim">Cím</label>
           <input type="text" class="form-control" name="cim" [(ngModel)]="Fi.cim"
@@ -20,6 +22,7 @@
             minlength="5" maxlength="100" required>
           <span class="help-block" *ngIf="chkInput(f, f.controls.cim)">Kérjük adja meg a címét!</span>
         </div>
+
         <div class="form-group">
           <label for="email">E-mail</label>
           <input type="text" class="form-control" name="email" [(ngModel)]="Fi.email"
@@ -28,6 +31,7 @@
             pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
           <span class="help-block" *ngIf="chkInput(f, f.controls.email)">Kérjük adja meg helyesen az e-mail címét!</span>
         </div>
+
         <div class="form-group">
           <label for="telefon">Telefon</label>
           <input type="text" class="form-control" name="telefon" [(ngModel)]="Fi.telefon"
@@ -35,20 +39,36 @@
                  required>
           <span class="help-block"
                 *ngIf="chkInput(f, f.controls.telefon)">Kérjük adja meg helyesen a telefonszámát!</span>
-
-          <label for="kompenzalando">Kompenzálandó fogyasztás, kWh</label>
-          <input type="number" class="form-control" name="kompenzalando" [(ngModel)]="Fi.kompenzalando"
-                 placeholder="Kompenzálandó fogyasztás, kWh">
         </div>
+
+        <div class="form-group">
+          <label for="havifogyasztas">Havi fogyasztás, kWh</label>
+          <input type="number" class="form-control" name="havifogyasztas" [(ngModel)]="Fi.HAVIFOGYASZTASKWH"
+                 placeholder="Havi fogyasztás, kWh">
+        </div>
+
+        <div class="form-group">
+          <label for="haviszamla">vagy Havi számla, Ft</label>
+          <input type="number" class="form-control" name="haviszamla" [(ngModel)]="Fi.HAVISZAMLAFT"
+                 placeholder="Havi számla, Ft">
+        </div>
+
         <div class="form-group">
           <label for="nevleges">vagy A napelemek teljesítménye, kW</label>
-          <input type="number" class="form-control" name="nevleges" [(ngModel)]="Fi.nevleges"
+          <input type="number" class="form-control" name="nevleges" [(ngModel)]="Fi.NAPELEMEKTELJESITMENYEKW"
             placeholder="A napelemek teljesítménye, kW">
+        </div>
+
+        <div class="form-group">
+          <label for="megjegyzes">Megjegyzés</label>
+          <input type="text" class="form-control" name="megjegyzes" [(ngModel)]="Fi.MEGJEGYZES"
+                 placeholder="Megjegyzés">
         </div>
 
         <button type="submit" [disabled]="markattintott" class="btn btn-primary">Ajánlatkérés</button>
       </form>
       <div class="help-block" *ngIf="hiba">{{hibaUzenet}}</div>
+      <div style="height: 100px"></div>
     </div>
   </div>
 </div>
@@ -60,8 +80,6 @@
       E-mail: <b>{{Fi.email}}</b><br>
       Telefon: <b>{{Fi.telefon}}</b><br>
     </p>
-    <p *ngIf="Fi.kompenzalando">Kompenzálandó fogyasztás, kWh: <b>{{Fi.kompenzalando}}</b><p>
-    <p *ngIf="Fi.nevleges">A napelemek teljesítménye, kW: <b>{{Fi.nevleges}}</b><p>
     <p><br>Ajánlatkérését e-mail-ben is megerősítettük. Hamarosan keresni fogjuk a részletek egyeztetése céljából!<p>
   </div>
 </ng-template>
