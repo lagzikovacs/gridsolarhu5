@@ -34,10 +34,10 @@ export class AjanlatkeresComponent implements OnInit {
     this.markattintott = true;
 
     const url = 'https://docport.hu/ossrest/api/ugynok/webesajanlatkeres';
-    // let url = 'http://localhost:5000/api/ugynok/webesajanlatkeres';
+    // const url = 'http://localhost:52643/api/ugynok/webesajanlatkeres';
     const headers = new Headers({'Content-Type': 'application/json'});
     const options = new RequestOptions({headers: headers});
-
+    console.log(this.Fi);
     this.http.post(url, this.Fi, options)
       .toPromise()
       .then(res => {
