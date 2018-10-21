@@ -37,7 +37,10 @@ export class AjanlatkeresComponent implements OnInit {
     // const url = 'http://localhost:52643/api/ugynok/webesajanlatkeres';
     const headers = new Headers({'Content-Type': 'application/json'});
     const options = new RequestOptions({headers: headers});
-    console.log(this.Fi);
+
+    this.Fi.PARTICIOKOD = 1;
+    this.Fi.UGYNOKNEV = 'gridsolar.hu';
+
     this.http.post(url, this.Fi, options)
       .toPromise()
       .then(res => {

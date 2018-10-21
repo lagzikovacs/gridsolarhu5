@@ -1,4 +1,5 @@
 export class Feliratkozas {
+  PARTICIOKOD: number;
   nev: string;
   cim: string;
   email: string;
@@ -8,4 +9,5 @@ export class Feliratkozas {
   HAVISZAMLAFT: number;
   NAPELEMEKTELJESITMENYEKW: number;
   MEGJEGYZES: string;
+  UGYNOKNEV: string;
 }
