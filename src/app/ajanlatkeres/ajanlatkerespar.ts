@@ -1,4 +1,4 @@
-export class Feliratkozas {
+export class AjanlatkeresPar {
   PARTICIOKOD: number;
   nev: string;
   cim: string;

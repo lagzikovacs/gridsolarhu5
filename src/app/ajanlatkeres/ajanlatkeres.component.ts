@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {Http, Headers, RequestOptions} from '@angular/http';
-import {Feliratkozas} from './feliratkozas';
+import {AjanlatkeresPar} from './ajanlatkerespar';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -14,16 +14,21 @@ import 'rxjs/add/operator/toPromise';
 export class AjanlatkeresComponent implements OnInit {
   public ajanlatkeresKesz = false;
 
-  public Fi = new Feliratkozas();
+  public Fi = new AjanlatkeresPar();
 
   public hiba = false;
   public hibaUzenet = '';
   public markattintott = false;
+  adatkszab = false;
 
   constructor(private http: Http) {
   }
 
   ngOnInit() {
+  }
+
+  chkadatkszab() {
+    this.adatkszab = !this.adatkszab;
   }
 
   submitForm(form: NgForm) {
@@ -39,7 +44,9 @@ export class AjanlatkeresComponent implements OnInit {
     const options = new RequestOptions({headers: headers});
 
     this.Fi.PARTICIOKOD = 1;
-    this.Fi.UGYNOKNEV = 'gridsolar.hu';
+    if ((this.Fi.UGYNOKNEV || '') === '') {
+      this.Fi.UGYNOKNEV = 'gridsolar.hu';
+    }
 
     this.http.post(url, this.Fi, options)
       .toPromise()
@@ -47,11 +54,7 @@ export class AjanlatkeresComponent implements OnInit {
         this.ajanlatkeresKesz = true;
       })
       .catch(error => {
-        if (error.status !== 599) {
-          this.hibaUzenet = error;
-        } else {
-          this.hibaUzenet = error.json();
-        }
+        this.hibaUzenet = error;
         this.hiba = true;
       });
   }

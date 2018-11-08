@@ -3,13 +3,13 @@
 <div class="hasab" *ngIf="!ajanlatkeresKesz; else elseBlock">
   <p align="justify">Kérjük töltse ki az alábbi mezőket (az első négyet mindenképp)!<br>Adatkezelési szabályainkat megismerheti <a routerLink="/gdpr">itt.</a></p>
 
-  <div class="row">
+  <div class="row no-gutter">
     <div class="col-xs-12 col-sm-4 col-md-4">
       <form #f="ngForm" (ngSubmit)="submitForm(f)" novalidate>
 
         <div class="form-group">
           <label for="nev">Név</label>
-          <input type="text" class="form-control" name = "nev" [(ngModel)]="Fi.nev"
+          <input type="text" class="form-control" name = "nev" id="nev" [(ngModel)]="Fi.nev"
             placeholder="Név (min. 5, max. 100 kar.)"
             minlength="5" maxlength="100" required>
           <span class="help-block" *ngIf="chkInput(f, f.controls.nev)">Kérjük adja meg a nevét!</span>
@@ -17,7 +17,7 @@
 
         <div class="form-group">
           <label for="cim">Cím</label>
-          <input type="text" class="form-control" name="cim" [(ngModel)]="Fi.cim"
+          <input type="text" class="form-control" name="cim" id="cim" [(ngModel)]="Fi.cim"
             placeholder="Cím (min. 5, max. 100 kar.)"
             minlength="5" maxlength="100" required>
           <span class="help-block" *ngIf="chkInput(f, f.controls.cim)">Kérjük adja meg a címét!</span>
@@ -25,7 +25,7 @@
 
         <div class="form-group">
           <label for="email">E-mail</label>
-          <input type="text" class="form-control" name="email" [(ngModel)]="Fi.email"
+          <input type="text" class="form-control" name="email" id="email" [(ngModel)]="Fi.email"
             placeholder="E-mail (max. 100 kar.)"
             maxlength="100" required
             pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
@@ -34,7 +34,7 @@
 
         <div class="form-group">
           <label for="telefon">Telefon</label>
-          <input type="text" class="form-control" name="telefon" [(ngModel)]="Fi.telefon"
+          <input type="text" class="form-control" name="telefon" id="telefon" [(ngModel)]="Fi.telefon"
                  placeholder="Telefon (06xx 1234567)"
                  required>
           <span class="help-block"
@@ -43,29 +43,40 @@
 
         <div class="form-group">
           <label for="havifogyasztas">Havi fogyasztás, kWh</label>
-          <input type="number" class="form-control" name="havifogyasztas" [(ngModel)]="Fi.HAVIFOGYASZTASKWH"
+          <input type="number" class="form-control" name="havifogyasztas" id="havifogyasztas" [(ngModel)]="Fi.HAVIFOGYASZTASKWH"
                  placeholder="Havi fogyasztás, kWh">
         </div>
 
         <div class="form-group">
           <label for="haviszamla">vagy Havi számla, Ft</label>
-          <input type="number" class="form-control" name="haviszamla" [(ngModel)]="Fi.HAVISZAMLAFT"
+          <input type="number" class="form-control" name="haviszamla" id="haviszamla" [(ngModel)]="Fi.HAVISZAMLAFT"
                  placeholder="Havi számla, Ft">
         </div>
 
         <div class="form-group">
           <label for="nevleges">vagy A napelemek teljesítménye, kW</label>
-          <input type="number" class="form-control" name="nevleges" [(ngModel)]="Fi.NAPELEMEKTELJESITMENYEKW"
+          <input type="number" class="form-control" name="nevleges" id="nevleges" [(ngModel)]="Fi.NAPELEMEKTELJESITMENYEKW"
             placeholder="A napelemek teljesítménye, kW">
         </div>
 
         <div class="form-group">
           <label for="megjegyzes">Megjegyzés</label>
-          <input type="text" class="form-control" name="megjegyzes" [(ngModel)]="Fi.MEGJEGYZES"
+          <input type="text" class="form-control" name="megjegyzes" id="megjegyzes" [(ngModel)]="Fi.MEGJEGYZES"
                  placeholder="Megjegyzés">
         </div>
 
-        <button type="submit" [disabled]="markattintott" class="btn btn-primary">Ajánlatkérés</button>
+        <div class="form-group">
+          <label for="ugynoknev">Ügynök</label>
+          <input type="text" class="form-control" name="ugynoknev" id="ugynoknev" [(ngModel)]="Fi.UGYNOKNEV"
+                 placeholder="Ügynök">
+        </div>
+
+        <div class="form-group">
+          <input type="checkbox" name="adatkszab" id="adatkszab" [checked]="adatkszab" (click)="chkadatkszab()">
+          <label for="adatkszab">Az adatkezelési szabályokat elfogadom</label>
+        </div>
+
+        <button type="submit" [disabled]="markattintott || !adatkszab" class="btn btn-primary">Ajánlatkérés</button>
       </form>
       <div class="help-block" *ngIf="hiba">{{hibaUzenet}}</div>
       <div style="height: 100px"></div>
