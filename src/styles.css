@@ -1,7 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  font-size: 14px;
+}
 
 /* Minden régi típú oldalhoz */
 .hasab {
+  overflow: auto;
   margin: auto;
   width: 90%;
   height: auto;

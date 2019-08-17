@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
-import {Http, Headers, RequestOptions} from '@angular/http';
 import {AjanlatkeresPar} from './ajanlatkerespar';
-
-import 'rxjs/add/operator/toPromise';
+import {EmptyResult} from './emptyresult';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-ajanlatkeres',
@@ -21,7 +20,7 @@ export class AjanlatkeresComponent implements OnInit {
   public markattintott = false;
   adatkszab = false;
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
   }
 
   ngOnInit() {
@@ -39,18 +38,19 @@ export class AjanlatkeresComponent implements OnInit {
     this.markattintott = true;
 
     const url = 'https://docport.hu/osscore/api/ajanlatkeres/webesajanlatkeres';
-    // const url = 'http://localhost:52643/api/ugynok/webesajanlatkeres';
-    const headers = new Headers({'Content-Type': 'application/json'});
-    const options = new RequestOptions({headers: headers});
 
     this.Fi.PARTICIOKOD = 1;
     if ((this.Fi.UGYNOKNEV || '') === '') {
       this.Fi.UGYNOKNEV = 'gridsolar.hu';
     }
 
-    this.http.post(url, this.Fi, options)
+    this.http.post<EmptyResult>(url, this.Fi, {headers: new HttpHeaders().set('Content-Type', 'application/json')})
       .toPromise()
       .then(res => {
+        if (res.Error !== null) {
+          throw res.Error;
+        }
+
         this.ajanlatkeresKesz = true;
       })
       .catch(error => {

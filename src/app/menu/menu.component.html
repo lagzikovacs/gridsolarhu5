@@ -1,30 +1,28 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<!--<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">-->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark rounded mb-3">
   <div class="container-fluid">
     <div class="navbar-header">
       <!-- erre a button-re költöznek a menüpontok, ha képernyőméret miatt szükséges
       a navbar-collapse-1 id alapján-->
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1"
-              aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+              aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
       <a class="navbar-brand" routerLink="/fooldal"> GridSolar Group Kft.
       </a>
     </div>
     <!-- a következők költöznek a hamburger button-re, ha kell -->
-    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+    <div class="collapse navbar-collapse" id="navbarCollapse">
       <!-- balra igazítva a navbar-on -->
 
       <!-- jobbra igazítva a navbar-on -->
-      <ul class="nav navbar-nav navbar-right">
-        <li><a routerLink="/ajanlatkeres">Ajánlatkérés</a></li>
-        <li><a routerLink="/palyazat">Széchenyi 2020</a></li>
-        <li><a routerLink="/referenciak">Referenciák</a></li>
-        <li><a routerLink="/aszf">ÁSZF</a></li>
-        <li><a routerLink="/gdpr">GPDR</a></li>
-        <li><a routerLink="/kapcsolat">Kapcsolat</a></li>
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" routerLink="/ajanlatkeres">Ajánlatkérés</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/palyazat">Széchenyi 2020</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/referenciak">Referenciák</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/aszf">ÁSZF</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/gdpr">GPDR</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/kapcsolat">Kapcsolat</a></li>
       </ul>
     </div>
   </div>
