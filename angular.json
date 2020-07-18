@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/gridsolarhu5",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -37,6 +38,12 @@
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -131,5 +138,8 @@
       }
     }
   },
-  "defaultProject": "gridsolarhu5"
+  "defaultProject": "gridsolarhu5",
+  "cli": {
+    "analytics": "6df89fbc-7c85-4006-b869-eecf424f1545"
+  }
 }
