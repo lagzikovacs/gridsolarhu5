@@ -10,7 +10,7 @@ export class ReferenciakComponent implements OnInit {
   constructor() { }
 
   private MapResize(wHeight: number): void {
-    this.mapheight = wHeight - 80 + 'px';
+    this.mapheight = wHeight - 40 + 'px';
   }
 
   ngOnInit() {

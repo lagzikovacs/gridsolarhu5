@@ -4,14 +4,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menu/menu.component';
 import { FooldalComponent } from './fooldal/fooldal.component';
 import { AjanlatkeresComponent } from './ajanlatkeres/ajanlatkeres.component';
 import { ReferenciakComponent } from './referenciak/referenciak.component';
 import { KapcsolatComponent } from './kapcsolat/kapcsolat.component';
 import { PalyazatComponent } from './palyazat/palyazat.component';
-import { AszfComponent } from './aszf/aszf.component';
-import { GdprComponent } from './gdpr/gdpr.component';
 import {HttpClientModule} from '@angular/common/http';
 
 export const routerSettings: Routes = [
@@ -20,8 +17,6 @@ export const routerSettings: Routes = [
   { path: 'referenciak', component: ReferenciakComponent },
   { path: 'kapcsolat', component: KapcsolatComponent },
   { path: 'palyazat', component: PalyazatComponent },
-  { path: 'aszf', component: AszfComponent },
-  { path: 'gdpr', component: GdprComponent },
   { path: '', component: FooldalComponent },
   { path: '**', component: FooldalComponent }
 ];
@@ -29,14 +24,11 @@ export const routerSettings: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
     FooldalComponent,
     AjanlatkeresComponent,
     ReferenciakComponent,
     KapcsolatComponent,
-    PalyazatComponent,
-    AszfComponent,
-    GdprComponent
+    PalyazatComponent
   ],
   imports: [
     BrowserModule,

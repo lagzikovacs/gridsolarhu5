@@ -1,7 +1,7 @@
-<div style="height: 80px"></div>
+<div style="height: 20px"></div>
 
 <div *ngIf="!ajanlatkeresKesz; else elseBlock">
-  <p align="justify">Kérjük töltse ki az alábbi mezőket (az első négyet mindenképp)!<br>Adatkezelési szabályainkat megismerheti <a routerLink="/gdpr">itt.</a></p>
+  <p align="justify">Kérjük töltse ki az alábbi mezőket (az első négyet mindenképp)!<br>Adatkezelési szabályainkat megismerheti <a routerLink="/kapcsolat">itt.</a></p>
 
   <div class="row no-gutter">
     <div class="col-xs-12 col-sm-4 col-md-4">
@@ -63,12 +63,6 @@
           <label for="megjegyzes">Megjegyzés</label>
           <input type="text" class="form-control form-control-sm" name="megjegyzes" id="megjegyzes" [(ngModel)]="Fi.MEGJEGYZES"
                  placeholder="Megjegyzés">
-        </div>
-
-        <div class="form-group">
-          <label for="ugynoknev">Ügynök</label>
-          <input type="text" class="form-control form-control-sm" name="ugynoknev" id="ugynoknev" [(ngModel)]="Fi.UGYNOKNEV"
-                 placeholder="Ügynök">
         </div>
 
         <div class="form-group">
