@@ -34,7 +34,7 @@ export const routerSettings: Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routerSettings)
+    RouterModule.forRoot(routerSettings, { relativeLinkResolution: 'legacy' })
   ],
   providers: [],
   bootstrap: [AppComponent]
