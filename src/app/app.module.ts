@@ -10,6 +10,7 @@ import { ReferenciakComponent } from './referenciak/referenciak.component';
 import { KapcsolatComponent } from './kapcsolat/kapcsolat.component';
 import { PalyazatComponent } from './palyazat/palyazat.component';
 import {HttpClientModule} from '@angular/common/http';
+import { HibabejelentesComponent } from './hibabejelentes/hibabejelentes.component';
 
 export const routerSettings: Routes = [
   { path: 'fooldal', component: FooldalComponent },
@@ -28,7 +29,8 @@ export const routerSettings: Routes = [
     AjanlatkeresComponent,
     ReferenciakComponent,
     KapcsolatComponent,
-    PalyazatComponent
+    PalyazatComponent,
+    HibabejelentesComponent
   ],
   imports: [
     BrowserModule,
